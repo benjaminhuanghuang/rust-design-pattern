@@ -1,15 +1,15 @@
 use blog::Post;
 
-
 fn main() {
- let mut post = Post::new();
+  let mut post = Post::new();
 
- post.add_text("");
+  post.add_text("");
+  assert_eq!("", post.content());
 
- post.request_re();
+  post.request_review();
+  assert_eq!("", post.content());
 
+  post.approve();
 
- post.approve();
-
- assert_eq!("", post.content())
+  assert_eq!("Done!", post.content())
 }
